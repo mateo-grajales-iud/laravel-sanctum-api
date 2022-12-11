@@ -1,49 +1,13 @@
-# Laravel REST API with Sanctum
+# back end reto final
 
-This is an example of a REST API using auth tokens with Laravel Sanctum
+Equipo:
+Mateo Grajales Jaramillo
+Carolina Florez Mesa
 
-## Usage
+## Consideraciones
 
-Change the *.env.example* to *.env* and add your database info
+Las URL de los servicios estan apuntado al dominio http://laravel-sanctum-api.test/, por lo tanto el backend debe configurarse para correr en esa url
 
-For SQLite, add
-```
-DB_CONNECTION=sqlite
-DB_HOST=127.0.0.1
-DB_PORT=3306
-```
+El usuario predeterminado es admin@admin y la contraseña es 123456789
 
-Create a _database.sqlite_ file in the _database_ directory
-
-```
-# Run the webserver on port 8000
-php artisan serve
-```
-
-## Routes
-
-```
-# Public
-
-GET   /api/products
-GET   /api/products/:id
-
-POST   /api/login
-@body: email, password
-
-POST   /api/register
-@body: name, email, password, password_confirmation
-
-
-# Protected
-
-POST   /api/products
-@body: name, slug, description, price
-
-PUT   /api/products/:id
-@body: ?name, ?slug, ?description, ?price
-
-DELETE  /api/products/:id
-
-POST    /api/logout
-```
+Para que se ejecute la migracion con los seeders, se debe utilizar el comando php artisan migrate --seed
